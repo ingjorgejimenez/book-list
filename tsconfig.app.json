@@ -26,9 +26,15 @@
     // Project
     "baseUrl": "./",
     "paths": {
-      "@/*": ["./src/*"],
-      "@/components/*": ["./src/components/*"]
+      "@/*": ["./src/*"]
     }
   },
-  "include": ["src"]
+
+  "include": [
+    "src",
+    "**/*.ts",
+    "**/*.tsx",
+    ".vite/types/**/*.ts",
+    "vite-env.d.ts"
+  ]
 }

@@ -1,9 +1,6 @@
-'use client'
-
-import { useUIStore } from '../../../store/ui/ui-store'
+import { useBookStore, useUIStore } from '@/store'
 import { useEffect, useState } from 'react'
 import { IoBookOutline, IoMenuOutline, IoSearchOutline } from 'react-icons/io5'
-import { useBookStore } from '../../../store/book/bookStore'
 
 export const TopMenu = () => {
   const { openSideMenu } = useUIStore()

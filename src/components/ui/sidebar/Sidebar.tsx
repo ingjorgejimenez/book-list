@@ -1,4 +1,4 @@
-import { useUIStore } from '../../store/ui/ui-store'
+import { useUIStore } from '@/store'
 import {
   IoCloseOutline,
   IoPersonOutline,

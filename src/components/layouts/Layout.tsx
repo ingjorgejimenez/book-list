@@ -1,6 +1,5 @@
 import { ReactNode } from 'react'
-import { TopMenu } from '../Navbar'
-import { Sidebar } from '../sidebar/Sidebar'
+import { Footer, Sidebar, TopMenu } from '../ui'
 
 export interface LayoutProps {
   children?: ReactNode
@@ -16,6 +15,7 @@ export const Layout = ({ children }: LayoutProps) => {
       <main className='pt-10'>
         <div className='max-w-screen-xl px-5 mx-auto'>{children}</div>
       </main>
+      <Footer />
     </>
   )
 }
