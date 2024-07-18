@@ -8,12 +8,10 @@ export interface LayoutProps {
 export const Layout = ({ children }: LayoutProps) => {
   return (
     <>
-      <header className='py-5 shadow-3xl'>
-        <TopMenu />
-      </header>
+      <TopMenu />
       <Sidebar />
-      <main className='pt-10'>
-        <div className='max-w-screen-xl px-5 mx-auto'>{children}</div>
+      <main className='flex-1 px-8 pt-10'>
+        <div className='max-w-screen-xl mx-auto'>{children}</div>
       </main>
       <Footer />
     </>

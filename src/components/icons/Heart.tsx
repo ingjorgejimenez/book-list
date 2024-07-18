@@ -1,5 +1,5 @@
 import React from 'react'
-import { IoHeart, IoHeartCircleOutline } from 'react-icons/io5'
+import { IoHeart } from 'react-icons/io5'
 
 interface HeartProps extends React.SVGProps<SVGSVGElement> {
   className?: string
@@ -13,7 +13,6 @@ interface HeartProps extends React.SVGProps<SVGSVGElement> {
 const Heart = ({
   className = '',
   width = '19.39',
-  height,
   fill = 'var(--body)',
   isSelected,
   ...props

@@ -20,10 +20,9 @@ export const Sidebar = () => {
         <div className='fixed top-0 left-0 z-10 w-screen h-screen fade-in backdrop-filter backdrop-blur-sm' />
       )}
 
-      {/* Sidemenu */}
+      {/* SideMenu */}
       <nav
-        // TODO: efecto de slide
-        className={`fixed p-5 right-0 top-0 w-[500px] h-screen bg-white dark:bg-body z-20 shadow-2xl transform transition-all duration-300 ${
+        className={`fixed max-w-full p-5 right-0 top-0 w-[500px] h-screen bg-white dark:bg-body z-20 shadow-2xl transform transition-all duration-300 ${
           !isSideMenuOpen && 'translate-x-full'
         }`}
       >
@@ -46,14 +45,14 @@ export const Sidebar = () => {
         <a
           href='/profile'
           onClick={closeSideMenu}
-          className='flex items-center p-2 mt-10 transition-all rounded hover:bg-gray-100'
+          className='flex items-center p-2 mt-10 transition-all rounded hover:bg-primary'
         >
           <IoPersonOutline size={30} />
           <span className='ml-3 text-xl'>Libros</span>
         </a>
         <a
           href='/'
-          className='flex items-center p-2 mt-10 transition-all rounded hover:bg-gray-100'
+          className='flex items-center p-2 mt-10 transition-all rounded hover:bg-primary'
         >
           <IoTicketOutline size={30} />
           <span className='ml-3 text-xl'>Favoritos</span>

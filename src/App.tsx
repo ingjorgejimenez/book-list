@@ -1,20 +1,30 @@
-import { CardBook } from './components/book/CardBook'
-import { Grid } from './components/Grid'
+import { useEffect, useState } from 'react'
 import { Layout } from './components/layouts/Layout'
-import { useGetBooks } from './hooks/useGetBooks'
+import Home from './page/home'
+import ListBook from './page/ListBook'
+
+import { EVENTS } from './utils/consts'
+import { getCurrentPath } from './utils/getRouter'
 
 function App() {
-  const { books } = useGetBooks()
-  console.log(books)
+  const pathname = getCurrentPath()
+  const [currentPage, setCurrentPage] = useState(pathname)
+
+  useEffect(() => {
+    const onLocationChange = () => {
+      setCurrentPage(getCurrentPath())
+    }
+    window.addEventListener(EVENTS.POP_STATE, onLocationChange)
+    return () => {
+      window.removeEventListener(EVENTS.POP_STATE, onLocationChange)
+    }
+  }, [])
+
   return (
     <Layout>
-      <Grid>
-        {books?.map(book => (
-          <>
-            <CardBook {...book.book} />
-          </>
-        ))}
-      </Grid>
+      {currentPage == '/' && <Home />}
+      {currentPage == '/lista-de-lectura' && <ListBook />}
+      {currentPage == '/libro' && <ListBook />}
     </Layout>
   )
 }

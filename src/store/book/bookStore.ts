@@ -1,32 +1,36 @@
+import { IBookItem } from '@/interfaces'
 import { create } from 'zustand'
 import { persist } from 'zustand/middleware'
 
 interface State {
-  book: any[]
+  bookList: IBookItem[]
   getTotalItems: () => number
-  addBook: (books: any) => void
-  removeBook: (books: any) => void
+  addBook: (book: IBookItem) => void
+  removeBook: (book: IBookItem) => void
 }
 
 export const useBookStore = create<State>()(
   persist(
     (set, get) => ({
-      book: [],
+      bookList: [],
       // Methods
-
       getTotalItems: () => {
-        const { book } = get()
-        return book.reduce((acc, _, index) => acc + index + 1, 0)
-      },
-      addBook: books => {
-        set({ book: books })
+        const { bookList } = get()
+        return bookList.reduce(acc => (acc += 1), 0)
       },
 
-      removeBook(books) {
-        const { book } = get()
-        const updateCardProducts = book.filter(item => item.ISBN !== books.ISBN)
+      addBook: (book: IBookItem) => {
+        const { bookList } = get()
+        set({ bookList: [...bookList, book] })
+      },
+
+      removeBook(book) {
+        const { bookList } = get()
+        const updateCardProducts = bookList.filter(
+          item => item.ISBN !== book.ISBN,
+        )
         set({
-          book: updateCardProducts,
+          bookList: updateCardProducts,
         })
       },
     }),

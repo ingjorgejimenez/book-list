@@ -1,32 +1,35 @@
-import { useEffect, useState } from 'react'
+import { IBookItem, IBooks } from '@/interfaces'
 import { getBooks } from '../services/api'
-import { IBooks } from '../interfaces'
+import { useQuery } from '@tanstack/react-query'
 
 export const useGetBooks = () => {
-  const [books, setBooks] = useState<IBooks[]>()
-  const [error, setError] = useState<Error>()
-  const [isLoading, setIsLoading] = useState<boolean>(false)
-
-  const fetchBooks = async () => {
+  const fetchBooks = async (): Promise<IBooks[]> => {
     try {
-      setIsLoading(true)
       const data = await getBooks()
-      setBooks(data.library)
+      return data.library
     } catch (error) {
       if (error instanceof Error) {
-        setError(error)
-      } else {
-        setError(new Error(`${error}`))
+        throw new Error(`Fetch error get data books: ${error.message}`)
       }
       console.error('Error get data books:', error)
-    } finally {
-      setIsLoading(false)
+      throw new Error('Failed to fetch data books')
     }
   }
+  const { error, data, isLoading } = useQuery<IBooks[]>({
+    queryKey: ['getBookData'],
+    queryFn: fetchBooks,
+  })
 
-  useEffect(() => {
-    fetchBooks()
-  }, [])
+  const getBooksOther = (books: IBookItem[]) => {
+    const booksOther = data?.filter(
+      book => !books.some(item => item.ISBN === book.book.ISBN),
+    )
+    return booksOther ?? []
+  }
+  const getBook = (ISBN: string) => {
+    const book = data?.find(({ book }) => book.ISBN === ISBN)
+    return book
+  }
 
-  return { books, isLoading, error }
+  return { books: data, isLoading, error, getBooksOther, getBook }
 }
