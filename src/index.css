@@ -1,12 +1,14 @@
 :root {
-  --primary: #003da5;
+  --primary: #4A83F6;
+  --body: #213547;
+  --dark: #030303;
 
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
   font-weight: 400;
   color-scheme: light dark;
-  color: #242424;
-  background-color: #ffffffde;
+  color: #ffffff;
+  background-color: var(--body);
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
@@ -18,13 +20,50 @@
 @tailwind utilities;
 
 
-@media (prefers-color-scheme: light) {
-  :root {
-    color: #213547;
-    background-color: #ffffff;
+@layer base {
+
+  h1,
+  .h1 {
+    @apply mb-4 text-2xl font-bold md:text-5xl;
   }
 
-  a:hover {
-    color: #747bff;
+  h2,
+  .h2 {
+    @apply mb-4 text-2xl font-bold md:text-4xl;
+  }
+
+  h3,
+  .h3 {
+    @apply mb-4 text-xl font-medium md:text-2xl;
+  }
+
+  h4,
+  .h4 {
+    @apply mb-4 text-xs font-medium md:text-xl;
+  }
+
+  h5,
+  .h5 {
+    @apply mb-3 text-xl font-semibold;
+  }
+
+  h6,
+  .h6 {
+    @apply mb-3 text-base font-normal;
+  }
+
+  body {
+    @apply bg-white dark:bg-body text-body dark:text-white;
+  }
+
+  img,
+  video,
+  iframe {
+    @apply max-w-full;
+  }
+
+  b,
+  strong {
+    @apply font-semibold;
   }
 }
