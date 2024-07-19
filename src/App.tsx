@@ -5,11 +5,11 @@ import ListBook from './page/ListBook'
 
 import { EVENTS } from './utils/consts'
 import { getCurrentPath } from './utils/getRouter'
+import DetailsBook from './page/DetailsBook'
 
 function App() {
   const pathname = getCurrentPath()
   const [currentPage, setCurrentPage] = useState(pathname)
-
   useEffect(() => {
     const onLocationChange = () => {
       setCurrentPage(getCurrentPath())
@@ -24,7 +24,7 @@ function App() {
     <Layout>
       {currentPage == '/' && <Home />}
       {currentPage == '/lista-de-lectura' && <ListBook />}
-      {currentPage == '/libro' && <ListBook />}
+      {currentPage == '/libro' && <DetailsBook />}
     </Layout>
   )
 }

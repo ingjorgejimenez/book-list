@@ -45,9 +45,9 @@ export const TopMenu = () => {
         {/* search, Books Menu */}
 
         <div className='flex items-center gap-4'>
-          <Link href={'/search'}>
+          {/* <Link href={'/search'}>
             <IoSearchOutline className='w-5 h-5' />
-          </Link>
+          </Link> */}
           <Link href={totalItems === 0 ? '' : '/lista-de-lectura'}>
             <div className='relative'>
               {totalItems != 0 && (
@@ -59,7 +59,7 @@ export const TopMenu = () => {
             </div>
           </Link>
           <button
-            className='mr-2 transition-all rounded-md hover:cursor-pointer'
+            className='mr-2 transition-all rounded-md hover:cursor-pointer md:hidden'
             onClick={openSideMenu}
           >
             <IoMenuOutline className='w-8 h-8' />

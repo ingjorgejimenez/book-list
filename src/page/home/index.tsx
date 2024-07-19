@@ -1,15 +1,25 @@
 import { CardBook } from '@/components/book/CardBook'
+import { FilterBooks } from '@/components/FilterBooks'
 import { Grid } from '@/components/Grid'
-import { useGetBooks } from '@/hooks/useGetBooks'
+import { useFilterBooks } from '@/hooks/useFilterBooks'
 
 const Home = () => {
-  const { books } = useGetBooks()
+  const { filters, searchBook, setAuthor, setGenre, setTitle } =
+    useFilterBooks()
   return (
-    <Grid>
-      {books?.map(({ book }) => (
-        <CardBook key={book.ISBN} book={book} />
-      ))}
-    </Grid>
+    <>
+      <FilterBooks
+        setAuthor={setAuthor}
+        setTitle={setTitle}
+        setGenre={setGenre}
+        {...filters}
+      />
+      <Grid>
+        {searchBook?.map(({ book }) => (
+          <CardBook key={book.ISBN} book={book} />
+        ))}
+      </Grid>
+    </>
   )
 }
 

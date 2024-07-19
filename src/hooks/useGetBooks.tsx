@@ -1,6 +1,7 @@
 import { IBookItem, IBooks } from '@/interfaces'
 import { getBooks } from '../services/api'
 import { useQuery } from '@tanstack/react-query'
+import { getBookByISBN, getBooksOtherData } from '@/services/books'
 
 export const useGetBooks = () => {
   const fetchBooks = async (): Promise<IBooks[]> => {
@@ -20,16 +21,13 @@ export const useGetBooks = () => {
     queryFn: fetchBooks,
   })
 
-  const getBooksOther = (books: IBookItem[]) => {
-    const booksOther = data?.filter(
-      book => !books.some(item => item.ISBN === book.book.ISBN),
-    )
-    return booksOther ?? []
+  const getBooksOther = (books: IBookItem[]) => getBooksOtherData(books, data)
+  const getBook = (ISBN?: string) => getBookByISBN(ISBN, data)
+  return {
+    books: data,
+    isLoading,
+    error,
+    getBooksOther,
+    getBook,
   }
-  const getBook = (ISBN: string) => {
-    const book = data?.find(({ book }) => book.ISBN === ISBN)
-    return book
-  }
-
-  return { books: data, isLoading, error, getBooksOther, getBook }
 }

@@ -44,7 +44,7 @@
 
   h5,
   .h5 {
-    @apply mb-3 text-xl font-semibold;
+    @apply mb-3 text-xl font-medium;
   }
 
   h6,
@@ -65,5 +65,14 @@
   b,
   strong {
     @apply font-semibold;
+  }
+}
+
+@layer components {
+  .bg-arrow-icon {
+    background-image: url('./assets/arrow.svg');
+    background-size: 0.7rem;
+    background-position: right 1.3rem center;
+    background-repeat: no-repeat;
   }
 }

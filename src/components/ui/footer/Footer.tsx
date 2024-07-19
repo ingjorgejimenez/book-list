@@ -1,6 +1,6 @@
 export const Footer = () => {
   return (
-    <div className='flex justify-center py-10 text-xs'>
+    <footer className='flex justify-center py-10 text-xs border-t dark:border-t-gray-700'>
       <a href='/'>
         <span className={` antialiased font-bold`}>Books </span>
         <span>| List </span>
@@ -15,6 +15,6 @@ export const Footer = () => {
         <span className='mr-4'>-</span>
         Jelou
       </a>
-    </div>
+    </footer>
   )
 }

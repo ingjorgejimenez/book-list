@@ -12,6 +12,6 @@ export const getBooks = (): Promise<ILibrary> => {
       .then(data => data.default)
   } catch (error) {
     console.error('Error get data books:', error)
-    throw new Error(`Fetch error: ${error}`)
+    throw new Error(`Fetch error`)
   }
 }
