@@ -47,22 +47,22 @@ export const Sidebar = () => {
         </div> */}
 
         <Link
-          onClick={closeSideMenu}
           className={`flex  gap-2 items-center p-2 mt-10 transition-all rounded hover:bg-primary ${
             pathname === '/' ? 'bg-primary' : ''
           }`}
           href='/'
+          onClick={closeSideMenu}
         >
           <IoLibraryOutline size={30} />
           <span className='ml-3 text-xl'>Listado</span>
         </Link>
         {totalItems > 0 && (
           <Link
-            onClick={closeSideMenu}
             className={`flex gap-2 items-center p-2 mt-10 transition-all rounded hover:bg-primary ${
               pathname === '/lista-de-lectura' ? 'bg-primary' : ''
             } `}
             href='/lista-de-lectura'
+            onClick={closeSideMenu}
           >
             <IoBookOutline size={30} />
             <span className='ml-3 text-xl'>Lista de lectura</span>

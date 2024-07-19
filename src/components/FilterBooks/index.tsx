@@ -22,7 +22,7 @@ export const FilterBooks = ({
   }
 
   return (
-    <div className='flex flex-col items-end justify-center gap-12 px-4 py-8 mx-auto mt-5 mb-8 bg-white rounded md:mt-10 dark:bg-gray-900 md:flex-row md:flex-wrap bg-green'>
+    <div className='flex flex-col items-end justify-center gap-12 px-4 py-8 mx-auto mt-5 mb-8 bg-white rounded shadow-3xl md:mt-10 dark:bg-gray-900 md:flex-row md:flex-wrap bg-green'>
       <SelectBook label={'Autor'} options={author} stateChange={setAuthor} />
       <SelectBook label={'Genero'} options={genre} stateChange={setGenre} />
       <input

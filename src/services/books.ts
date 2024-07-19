@@ -43,7 +43,14 @@ export const searchBookData = ({
   if (!data) return []
   if (!author && !genre && !title) return data ?? []
   const filteredBooks = data.filter(({ book }) => {
-    if (author && genre) {
+    if (author && genre && title) {
+      if (
+        book.author.name === author &&
+        book.genre.includes(genre) &&
+        book.title.toLowerCase().includes(title.toLowerCase())
+      )
+        return true
+    } else if (author && genre) {
       if (book.author.name === author && book.genre.includes(genre)) return true
     } else {
       if (author && book.author.name === author) return true

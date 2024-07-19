@@ -27,7 +27,7 @@ export const SelectBook = ({ label, options, stateChange }: SelectProps) => {
         id={label}
         name={label}
         onChange={handleOnChange}
-        className={`bg-white px-5 border-b-2 border-gray-200 rounded h-9 border-none pr-9 bg-arrow-icon dark:text-gray-600 text-base ${
+        className={`bg-gray-50 px-5 border-b-2 border-gray-200 rounded h-9 border-none pr-9 bg-arrow-icon dark:text-gray-600 text-base ${
           isSelected ? '' : 'text-opacity-50'
         } form-select appearance-none`}
         value={select}
