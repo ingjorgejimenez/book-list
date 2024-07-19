@@ -2,6 +2,7 @@
   "name": "book-list",
   "private": true,
   "version": "0.0.0",
+  "homepage": "https://ingjorgejimenez.github.io/book-list",
   "type": "module",
   "scripts": {
     "dev": "vite",
@@ -9,10 +10,13 @@
     "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
     "preview": "vite preview",
     "test": "jest",
-    "test:watch": "jest --watch"
+    "test:watch": "jest --watch",
+    "predeploy": "vite build",
+    "deploy": "gh-pages -d dist"
   },
   "dependencies": {
     "@tanstack/react-query": "^5.51.9",
+    "gh-pages": "^6.1.1",
     "jest-environment-jsdom": "^29.7.0",
     "jest-fetch-mock": "^3.0.3",
     "react": "^18.3.1",
