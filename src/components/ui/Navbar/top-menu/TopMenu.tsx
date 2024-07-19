@@ -32,9 +32,9 @@ export const TopMenu = () => {
           {totalItems > 0 && (
             <Link
               className={`p-2 m-2 transition-all rounded-md hover:bg-primary ${
-                pathname === '/lista-de-lectura' ? 'bg-primary' : ''
+                pathname === '/#/lista-de-lectura' ? 'bg-primary' : ''
               } `}
-              href='/lista-de-lectura'
+              href='/#/lista-de-lectura'
             >
               Lista de lectura
             </Link>
@@ -47,7 +47,7 @@ export const TopMenu = () => {
           {/* <Link href={'/search'}>
             <IoSearchOutline className='w-5 h-5' />
           </Link> */}
-          <Link href={totalItems === 0 ? '' : '/lista-de-lectura'}>
+          <Link href={totalItems === 0 ? '' : '/#/lista-de-lectura'}>
             <div className='relative'>
               {totalItems != 0 && (
                 <span className='absolute px-1 text-xs font-bold text-white rounded-full bg-primary fade-in -top-2 -right-2'>

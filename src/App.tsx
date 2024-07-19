@@ -20,11 +20,12 @@ function App() {
     }
   }, [])
 
+  console.log({ currentPage })
   return (
     <Layout>
       {currentPage == '/' && <Home />}
-      {currentPage == '/lista-de-lectura' && <ListBook />}
-      {currentPage == '/libro' && <DetailsBook />}
+      {currentPage == '/#/lista-de-lectura' && <ListBook />}
+      {currentPage == '/#/libro' && <DetailsBook />}
     </Layout>
   )
 }

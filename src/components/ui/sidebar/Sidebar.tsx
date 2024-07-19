@@ -59,9 +59,9 @@ export const Sidebar = () => {
         {totalItems > 0 && (
           <Link
             className={`flex gap-2 items-center p-2 mt-10 transition-all rounded hover:bg-primary ${
-              pathname === '/lista-de-lectura' ? 'bg-primary' : ''
+              pathname === '/#/lista-de-lectura' ? 'bg-primary' : ''
             } `}
-            href='/lista-de-lectura'
+            href='/#/lista-de-lectura'
             onClick={closeSideMenu}
           >
             <IoBookOutline size={30} />
