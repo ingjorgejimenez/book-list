@@ -1,4 +1,3 @@
-import React from 'react'
 import { IoHeart } from 'react-icons/io5'
 
 interface HeartProps extends React.SVGProps<SVGSVGElement> {
@@ -8,6 +7,7 @@ interface HeartProps extends React.SVGProps<SVGSVGElement> {
   height?: string
   width?: string
   isSelected?: boolean
+  onClick?: React.MouseEventHandler<SVGSVGElement>
 }
 
 const Heart = ({
@@ -15,6 +15,7 @@ const Heart = ({
   width = '19.39',
   fill = 'var(--body)',
   isSelected,
+  onClick,
   ...props
 }: HeartProps) => {
   const color = isSelected ? 'red' : fill
@@ -24,6 +25,7 @@ const Heart = ({
         size={width}
         className={`${className} drop-shadow-3xl`}
         color={color}
+        onClick={onClick}
         {...props}
       />
     </>

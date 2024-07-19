@@ -20,7 +20,6 @@ function App() {
     }
   }, [])
 
-  console.log({ currentPage })
   return (
     <Layout>
       {currentPage == '/' && <Home />}

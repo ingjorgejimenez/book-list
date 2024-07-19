@@ -7,6 +7,7 @@
     "lib": ["ES2020", "DOM", "DOM.Iterable"],
     "module": "ESNext",
     "skipLibCheck": true,
+    "types": ["node", "jest"],
 
     /* Bundler mode */
     "moduleResolution": "bundler",
@@ -27,7 +28,10 @@
     "baseUrl": "./",
     "paths": {
       "@/*": ["./src/*"]
-    }
+    },
+
+    // Test
+    "esModuleInterop": true
   },
 
   "include": [
@@ -35,6 +39,7 @@
     "**/*.ts",
     "**/*.tsx",
     ".vite/types/**/*.ts",
-    "vite-env.d.ts"
+    "vite-env.d.ts",
+    "jest.config.js"
   ]
 }

@@ -1,13 +1,14 @@
 import { IBookItem } from '@/interfaces'
 import { FavoriteList } from './FavoriteList'
 import { Link } from '@/router/Link'
+import { FC } from 'react'
 
-interface CardBookProps {
+export interface CardBookProps {
   className?: string
   book: IBookItem
 }
 
-export const CardBook = ({ className, book }: CardBookProps) => {
+export const CardBook: FC<CardBookProps> = ({ className, book }) => {
   return (
     <article
       className={`${className} relative max-w-full w-full p-4  shadow-3xl rounded-xl overflow-hidden bg-white dark:bg-body block text-center md:text-left mb-4`}

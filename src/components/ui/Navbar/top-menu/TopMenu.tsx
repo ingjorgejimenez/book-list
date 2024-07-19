@@ -1,8 +1,8 @@
-import Logo from '@/components/icons/Logo'
 import { Link } from '@/router/Link'
 import { useBookStore, useUIStore } from '@/store'
 import { getCurrentPath } from '@/utils/getRouter'
 import { IoBookOutline, IoMenuOutline } from 'react-icons/io5'
+import Logo from '../../../icons/Logo'
 
 export const TopMenu = () => {
   const { openSideMenu } = useUIStore()
@@ -23,7 +23,7 @@ export const TopMenu = () => {
         <div className='hidden sm:block'>
           <Link
             className={`p-2 m-2 transition-all rounded-md hover:bg-primary ${
-              pathname === '/' ? 'bg-primary' : ''
+              pathname === '/' ? 'bg-primary text-white' : ''
             }`}
             href='/'
           >
@@ -32,7 +32,9 @@ export const TopMenu = () => {
           {totalItems > 0 && (
             <Link
               className={`p-2 m-2 transition-all rounded-md hover:bg-primary ${
-                pathname === '/#/lista-de-lectura' ? 'bg-primary' : ''
+                pathname === '/#/lista-de-lectura'
+                  ? 'bg-primary text-white'
+                  : ''
               } `}
               href='/#/lista-de-lectura'
             >

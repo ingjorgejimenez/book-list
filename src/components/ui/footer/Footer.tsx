@@ -1,6 +1,6 @@
 export const Footer = () => {
   return (
-    <footer className='flex justify-center py-10 text-xs border-t dark:border-t-gray-700'>
+    <footer className='flex justify-center py-10 text-xs border-t border-t-gray-400 dark:border-t-gray-700'>
       <a href='/'>
         <span className={` antialiased font-bold`}>Books </span>
         <span>| List </span>
