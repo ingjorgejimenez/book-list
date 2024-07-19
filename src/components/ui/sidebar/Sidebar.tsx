@@ -2,15 +2,9 @@ import { Link } from '@/router/Link'
 import { useBookStore, useUIStore } from '@/store'
 import { getCurrentPath } from '@/utils/getRouter'
 import {
-  IoBookmarkOutline,
   IoBookOutline,
   IoCloseOutline,
-  IoHeadsetOutline,
-  IoLibrary,
   IoLibraryOutline,
-  IoLibrarySharp,
-  IoPersonOutline,
-  IoTicketOutline,
 } from 'react-icons/io5'
 
 export const Sidebar = () => {

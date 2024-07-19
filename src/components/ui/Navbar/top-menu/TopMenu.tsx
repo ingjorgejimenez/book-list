@@ -2,8 +2,7 @@ import Logo from '@/components/icons/Logo'
 import { Link } from '@/router/Link'
 import { useBookStore, useUIStore } from '@/store'
 import { getCurrentPath } from '@/utils/getRouter'
-
-import { IoBookOutline, IoMenuOutline, IoSearchOutline } from 'react-icons/io5'
+import { IoBookOutline, IoMenuOutline } from 'react-icons/io5'
 
 export const TopMenu = () => {
   const { openSideMenu } = useUIStore()
